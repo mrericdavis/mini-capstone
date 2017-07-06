@@ -1,0 +1,7 @@
+<h1>Shoe Store </h1>
+<% @shoes.each do |shoe| %> 
+
+<h2> <%= shoe.name %>  <%= shoe.price %> </h2>
+<h2> <img src="<%= shoe.image %>" </> </h2>
+<h2> <%= shoe.description %> </h2>
+<% end %>
