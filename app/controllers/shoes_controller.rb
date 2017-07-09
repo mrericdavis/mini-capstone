@@ -1,16 +1,16 @@
 class ShoesController < ApplicationController
-  def shoes_method
+  def index
     @shoes = Shoe.all
-    render "shoe.html.erb"
+    render "index.html.erb"
   end
-  def mens_shoe_method
+  def mens_shoes_method
     render "menshoe.html.erb"
   end  
-  def ladies_shoe_method
+  def ladies_shoes_method
 
     render "ladyshoe.html.erb"
   end
-  def kids_shoe_method
+  def kids_shoes_method
 
     render "kidshoe.html.erb"
   end

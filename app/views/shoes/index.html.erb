@@ -1,5 +1,5 @@
 <h1> "Welcome To Shoe Central" </h1>
-
+ 
 
 <div class="navbar navbar-inverse navbar-fixed-top">
   <div class="container">
@@ -61,8 +61,10 @@
       <ul class="nav navbar-nav navbar-right">
         <li>
         <div class="search">
+<%= form_tag "/shoestore.html.erb", method: :get do %>
 <input type="text" class="form-control input-sm" maxlength="64" placeholder="Search" />
  <button type="submit" class="btn btn-primary btn-sm">Search</button>
+<% end %>
 </div>
       </li>
       </ul>
