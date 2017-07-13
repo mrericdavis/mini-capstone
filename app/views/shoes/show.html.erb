@@ -1,10 +1,14 @@
 <h1>Shoe Info</h1>
-<h2><%=@shoe.name%></h2>
+
 <h2><a href="/shoes/<%= @shoe.id %>"><%= @shoe.name %></a></h2>
-<h3><%=@shoe.price%></h3>
+<h3>Price: <%= @shoe.price %></h3>
+<h3>Tax: <%= number_to_currency(@shoe.tax) %></h3>
+<h3>Total: <%= number_to_currency(@shoe.total) %></h3>
+
+
 <h2> <img src="<%= @shoe.image %>" ></h2>
 <h2><%=@shoe.description%></h2>
-
+<h2> <a class="btn btn-danger"><%=@shoe.sales_message%> </a> </h2>
 
 <br>
 <a href="/shoes/<%= @shoe.id %>/edit">Edit Shoe</a>
