@@ -1,9 +1,16 @@
 <h1>Shoe Info</h1>
 <h2><%=@shoe.name%></h2>
+<h2><a href="/shoes/<%= @shoe.id %>"><%= @shoe.name %></a></h2>
 <h3><%=@shoe.price%></h3>
-<h2> <img src="<%= @shoe.image %>" </h2>
-<h><%=@shoe.description%></h2>
+<h2> <img src="<%= @shoe.image %>" ></h2>
+<h2><%=@shoe.description%></h2>
 
-div>
+
+<br>
+<a href="/shoes/<%= @shoe.id %>/edit">Edit Shoe</a>
+<%= form_tag "/shoes/#{@shoe.id}", method: "destroy" do %>
+   <input type="submit" value="Delete Shoe"
+<% end %>
+<br>
 <a href="/shoes">Back to the Home page</a>
-<div>
+
