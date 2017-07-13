@@ -11,10 +11,15 @@
 <h2> <a class="btn btn-danger"><%=@shoe.sales_message%> </a> </h2>
 
 <br>
-<a href="/shoes/<%= @shoe.id %>/edit">Edit Shoe</a>
-<%= form_tag "/shoes/#{@shoe.id}", method: "destroy" do %>
-   <input type="submit" value="Delete Shoe"
-<% end %>
+<a href="/shoes" <a class="btn btn-default">Back to Home Page</a> 
 <br>
-<a href="/shoes">Back to the Home page</a>
+<br>
+<p>
+<a href="/shoes/<%= @shoe.id %>/edit" <a class="btn btn-default"> Edit Shoe</a>
+</p>
+<br>
+<%= form_tag "/shoes/#{@shoe.id}", method: "destroy" do %>
+   <input type="submit" value="Delete Shoe">
+<% end %>
+
 
