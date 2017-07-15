@@ -5,8 +5,7 @@ class ShoesController < ApplicationController
   end
   
   def edit
-    shoe_id = params[:id]
-    @shoe = Shoe.find_by(id: shoe_id)
+    @shoe = Shoe.find_by(id: params[:id])
     render "edit.html.erb"
   end
   
@@ -16,7 +15,6 @@ class ShoesController < ApplicationController
   end
 
   def show
-    # shoes_id = params[:id]
     @shoe = Shoe.find_by(id: params[:id])
     render "show.html.erb"
   end  
@@ -56,18 +54,19 @@ class ShoesController < ApplicationController
       description: params[:description]
      )
     shoe.save
-    render "create.html.erb"
+    flash[:success] = "Shoe Succesfully Added To Inventory"
+    redirect_to "/shoes/#{@shoe.id}"
   end
 
   def update
-    shoe_id = params[:id]
-    @shoe = Shoe.find_by(id: shoe_id)
+    @shoe = Shoe.find_by(id: params[:id])
     @shoe.name = params[:name]
     @shoe.price = params[:price]
     @shoe.image =  params[:image]
     @shoe.description = params[:description]
     @shoe.save
-    render "update.html.erb"
+    flash[:success] = "Shoe Succesfully Updated In Inventory"
+    redirect_to "/shoes/#{@shoe.id}"
   end  
 
   def contact_us_method
@@ -75,10 +74,10 @@ class ShoesController < ApplicationController
   end
 
   def destroy
-    shoes_id = params[:id]
-    @shoe = Shoe.find_by(id: shoes_id)
+    @shoe = Shoe.find_by(id: params[:id])
     @shoe.destroy
-    render "destroy.html.erb"
+    flash[:danger] = "Shoe Succesfully Deleted From Inventory"
+    redirect_to "/shoes"
   end  
 end
 
