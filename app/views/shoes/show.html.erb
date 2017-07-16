@@ -8,21 +8,19 @@
 
 <h2> <img src="<%= @shoe.image %>" ></h2>
 <h2><%=@shoe.description%></h2>
-<h2> <a class="btn btn-danger"><%=@shoe.sales_message%> </a> </h2>
 
 
-<br>
-<br>
+
+
 <div>
-<a href="/shoes" <a class="btn btn-danger">Back to Home Page</a> 
-</div
-
-<%= form_tag "/shoes/#{@shoe.id}", method: "destroy" do %>
-   <input type="submit" value="Delete Shoe">
-<% end %>
-<br>
-<div>
-<a href="/shoes/<%= @shoe.id %>/edit" <button type="submit" class="btn btn-danger"> </button>Edit Shoe</a>
+<a href="/shoes" <a class="btn btn-primary">Back to Home Page</a> 
 </div>
 <br>
+
+<%= form_tag "/shoes/#{@shoe.id}", method: "delete" do %>
+   <input type="submit" value="Delete Shoe" class="btn btn-danger"> 
+<% end %>
+
 <br>
+<a href="/shoes/<%= @shoe.id %>/edit" <button type="submit" class="btn btn-default"> </button>Edit Shoe</a>
+
