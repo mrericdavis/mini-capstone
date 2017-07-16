@@ -32,6 +32,9 @@ class ShoesController < ApplicationController
   end  
   
   def ladies_shoes_method
+    @shoe1 = Shoe.find_by(id:24372)
+    @shoe2 = Shoe.find_by(id:24373)
+    @shoe3 = Shoe.find_by(id:24371)
     render "ladyshoe.html.erb"
   end
 
