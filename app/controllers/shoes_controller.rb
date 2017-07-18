@@ -11,6 +11,16 @@ class ShoesController < ApplicationController
   
   def index
     @shoes = Shoe.all
+    sort_attribute = params[:sort_by]
+    sort_attribute = params[:sort_attribute]
+    sort_attribute = params[:sort_by]
+    if sort_attribute
+      @shoes = Shoe.all.order(sort_attribute)
+    elsif
+      Shoe.all.order(:price => :desc) 
+    else 
+      Shoe.where("price < ?", 100)
+    end 
     render "index.html.erb"
   end
 
@@ -81,7 +91,13 @@ class ShoesController < ApplicationController
     @shoe.destroy
     flash[:danger] = "Shoe Succesfully Deleted From Inventory"
     redirect_to "/shoes"
-  end  
-end
+  end
+
+  def search
+    search = params[:search_terms]
+    @shoes = Shoe.where("name iLIKE ?", "%#{search}%" )
+    render "index.html.erb"  
+  end
+end  
 
 

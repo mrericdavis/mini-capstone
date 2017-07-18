@@ -32,8 +32,8 @@
       <ul class="nav navbar-nav navbar-right">
         <li>
         <div class="search">
-<%= form_tag "/shoestore.html.erb", method: :get do %>
-<input type="text" class="form-control input-sm" maxlength="64" placeholder="Search" />
+<%= form_tag "/shoes_search", method: :get do %>
+<input type="text" class="form-control input-sm" maxlength="64"  placeholder="Search" name="search_terms" />
  <button type="submit" class="btn btn-primary btn-sm btn-search">Search</button>
 <% end %>
 </div>
