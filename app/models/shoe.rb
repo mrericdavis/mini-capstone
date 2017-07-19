@@ -1,5 +1,6 @@
 class Shoe < ApplicationRecord
-
+ belongs_to :supplier
+  
   def sales_message
     if price < 130.00
       return "Discount Item!!!"
