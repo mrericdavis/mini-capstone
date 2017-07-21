@@ -1,0 +1,24 @@
+<br>
+<br>
+<br>
+
+
+
+<h1>Signup To Shoe Central</h1>
+<%= form_tag '/users', method: :post do  %>
+  <div> 
+   <div class="form-group">
+    Name: <input type="text" name="name" class="form-control">
+  </div>
+  <div>
+    Email: <input type="email" name="email" class="form-control">
+  </div>
+  <div>
+    Password: <input type="password" name="password" class="form-control">
+  </div>
+  <div>
+    Confirm Password: <input type="password" name="password_confirmation" class="form-control">
+  </div>
+  <br>
+  <input type="submit" class="btn btn-danger" value="Submit" class="form-control" >
+<% end %>

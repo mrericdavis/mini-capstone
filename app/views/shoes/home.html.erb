@@ -68,7 +68,7 @@
         <div class="well">
           <h2> <ins> <%= shoe.name %> <ins> <%= shoe.price %> </h2>
           <h2><a href="/shoes/<%= shoe.id %>"><%= shoe.name %></a></h2>
-          <h2> <img src="<%= shoe.image %>" </> </h2>
+          <h2> <img src="<%= shoe.images.first.url %>" </> </h2>
           <h2> <%= shoe.description %> </h2>
         </div>
       </div>

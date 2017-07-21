@@ -14,4 +14,11 @@ Rails.application.routes.draw do
   get "/aboutus.html.erb" => "shoes#about_us_method"
   get "/contactus.html.erb" => "shoes#contact_us_method"
   get "/shoes_search" => "shoes#search"
+
+  get "/signup" => "users#new"
+  post "/users" => "users#create"
+
+  get "/login" => "sessions#new"
+  post "/login" => "sessions#create"
+  get "/logout" => "sessions#destroy"
 end

@@ -1,5 +1,6 @@
 class Shoe < ApplicationRecord
- belongs_to :supplier
+  belongs_to :supplier
+  has_many :images
   
   def sales_message
     if price < 130.00

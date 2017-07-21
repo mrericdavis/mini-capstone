@@ -6,7 +6,10 @@
 <h3>Total: <%= number_to_currency(@shoe.total) %></h3>
 
 
-<h2> <img src="<%= @shoe.image %>" ></h2>
+<% @shoe.images.each do |image| %>
+ <img src="<%= image.url %>" >
+<% end %>
+
 <h2><%=@shoe.description%></h2>
 <h2><%= @shoe.supplier.name %> </h2>
 
